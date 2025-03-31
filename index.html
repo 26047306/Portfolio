@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Website</title>
   <link rel="stylesheet" href="css/styles.css">
-<script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
     function sendEmail() {
-        var params = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value
-        };
+      var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      };
 
-        const serviceID = "service_23funlp";  // Add your Service ID
-        const templateID = "template_tatmgwq";  // Add your Template ID
+      const serviceID = "service_23funlp"; // Your Service ID
+      const templateID = "template_tatmgwq"; // Your Template ID
 
-        emailjs.send(serviceID, templateID, params)
+      emailjs.send(serviceID, templateID, params)
         .then(res => {
-            alert("Message Sent Successfully!");
+          alert("Message Sent Successfully!");
+          document.getElementById("contactForm").reset(); // Clear form after submission
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log("Error:", err));
     }
-</script>
-
-
+  </script>
 </head>
+
 <body>
   <!-- Navbar Section -->
   <header>
@@ -45,12 +48,11 @@
     <div class="home-content">
       <img src="image/icon.png" alt="User Icon" class="user-icon">
       <div class="hero_content">
-           
         <h1>
-          <span class="hi_text">Hi</span> , I am
+          <span class="hi_text">Hi</span>, I am
           <span class="name_text">Sandeep Yadav</span>
         </h1>
-        <h2>Data Anlytics and Developer</h2>
+        <h2>Data Analytics and Developer</h2>
       </div>
     </div>
   </section>
@@ -63,28 +65,26 @@
       <div class="project-card">
         <img src="image/amazon.png" alt="Project 1">
         <div class="project-info">
-          <h3>Amazon sales Dashboard</h3>
-          <p>This is a dashboard of Amazon sales in which we 
-            have visualized the sales with the help of different charts, 
-            basically Power BI has been used in this project ...</p>
+          <h3>Amazon Sales Dashboard</h3>
+          <p>This is a dashboard of Amazon sales in which we visualized the sales using various charts.
+            Power BI has been used extensively in this project...</p>
         </div>
       </div>
       <!-- Project Card 2 -->
       <div class="project-card">
         <img src="image/paytm_clone.png" alt="Project 2">
         <div class="project-info">
-          <h3>Paytm_clone</h3>
-          <p>This is a Paytm clone, while making it I got to learn a lot, 
-            in this project we have used frontend and UI/UX degine ...</p>
+          <h3>Paytm Clone</h3>
+          <p>This is a Paytm clone where I learned a lot about frontend development and UI/UX design...</p>
         </div>
       </div>
       <!-- Project Card 3 -->
       <div class="project-card">
-        <img src="image/fowershop.png" alt="Project 3">
+        <img src="image/flowershop.png" alt="Project 3">
         <div class="project-info">
           <h3>Flowershop Website</h3>
-          <p>This is a flower shope website where we can buy flowers.
-             Frontend, MERN development has been used to make it....</p>
+          <p>This is a flower shop website where users can buy flowers.
+            Frontend and MERN stack development have been used to create it...</p>
         </div>
       </div>
     </div>
@@ -93,11 +93,11 @@
   <!-- About Section -->
   <section id="about" class="about-section">
     <h2>About Us</h2>
-    <p>Highly-motivated student with desire to take on new challenges. 
-      Strong worth ethic, adaptability and exceptional interpersonal skills. 
-      Adept at working effectively unsupervised and quickly learning new skills. 
-      currently I am pursuing my BTech degree from Oriental College of technology in 
-      computer science with specialization in data science.</p>
+    <p>Highly motivated student with a desire to take on new challenges.
+      Strong work ethic, adaptability, and exceptional interpersonal skills.
+      Adept at working effectively without supervision and quickly learning new skills.
+      Currently, I am pursuing my B.Tech degree from Oriental College of Technology in
+      Computer Science with a specialization in Data Science.</p>
   </section>
 
   <!-- Skills Section -->
@@ -126,22 +126,15 @@
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <h2>Contact</h2>
-<!--     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" onclick="sendEmail()">Send</button>
-    </form> -->
-<form id="contactForm">
-    <input type="text" id="name" name="name" placeholder="Your Name" required>
-    <input type="email" id="email" name="email" placeholder="Your Email" required>
-    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-    <button type="button" onclick="sendEmail()">Send</button>
-</form>
-
-    
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      <button type="button" onclick="sendEmail()">Send</button>
+    </form>
   </section>
 
   <script src="js/script.js"></script>
 </body>
+
 </html>
